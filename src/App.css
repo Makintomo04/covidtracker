@@ -3,9 +3,31 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  background: rgb(247, 247, 247);
+}
+.app {
+  padding: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  /* flex-wrap: wrap; */
+}
 .app__header {
   display: flex;
   justify-content: space-between;
   margin-bottom: 50px;
   align-items: center;
+}
+.app__stats {
+  display: flex;
+  justify-content: space-between;
+  width: 30vw;
+}
+.app__left {
+  flex: 0.9;
+}
+@media (max-width: 990px) {
+  .app {
+    flex-direction: column;
+  }
 }
