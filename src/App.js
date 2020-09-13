@@ -9,11 +9,13 @@ import {
 import "./App.css";
 import InfoBox from "./InfoBox";
 import Map from "./Map";
+import Table from "./Table";
 
 function App() {
   const [countries, setCountries] = useState([]);
   const [country, setCountry] = useState("Worldwide");
   const [countryInfo, setCountryInfo] = useState({});
+  const [tableData, setTableData] = useState([]);
 
   useEffect(() => {
     const getCountries = async () => {
@@ -24,21 +26,25 @@ function App() {
             name: country.country,
             value: country.countryInfo.iso2,
           }));
+          setTableData(data);
           setCountries(countries);
         });
     };
     getCountries();
   }, []);
+
   useEffect(() => {
     fetch(`https://disease.sh/v3/covid-19/all`)
       .then((response) => response.json())
       .then((data) => {
+        setCountry(country);
         setCountryInfo(data);
       });
   }, []);
+
   const handleChange = async (event) => {
     const country = event.target.value;
-
+    console.log(event.target);
     const url =
       country === "worldwide"
         ? `https://disease.sh/v3/covid-19/all`
@@ -52,6 +58,7 @@ function App() {
       });
   };
   console.log("YO>>>", countryInfo);
+  console.log("oolflm", country);
   return (
     <div className="app">
       <div className="app__left">
@@ -66,6 +73,7 @@ function App() {
             </Select>
           </FormControl>
         </div>
+
         <div className="app__stats">
           <InfoBox
             title="Coronavirus Cases"
@@ -88,8 +96,9 @@ function App() {
       <div className="app__right">
         <Card>
           <CardContent>
-            <h2>Live Cases by Country</h2>
-            <h2>Worldwide new Cases</h2>
+            <h3>Live Cases by Country</h3>
+            <Table countries={tableData} />
+            <h3>Worldwide new Cases</h3>
           </CardContent>
         </Card>
       </div>
