@@ -1,22 +1,25 @@
 import React from "react";
-
+import "./Table.css";
+import { CommaFormatted } from "./util";
 function Table({ countries }) {
   console.log("FAMM>>>", countries);
   return (
     <div className="table">
       {countries.map(({ country, cases, countryInfo }) => (
         <tr>
+          <div className="table__country">
+            <td>
+              <img
+                height="40px"
+                width="40px"
+                style={{ borderRadius: "100%" }}
+                src={countryInfo.flag}
+              />
+            </td>
+            <td>{country}</td>
+          </div>
           <td>
-            <img
-              height="40px"
-              width="40px"
-              style={{ borderRadius: "100%" }}
-              src={countryInfo.flag}
-            />
-          </td>
-          <td>{country}</td>
-          <td>
-            <strong>{cases}</strong>
+            <strong>{CommaFormatted(cases)}</strong>
           </td>
         </tr>
       ))}
