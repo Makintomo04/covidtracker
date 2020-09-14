@@ -2,7 +2,6 @@ import React from "react";
 import "./Table.css";
 import { CommaFormatted } from "./util";
 function Table({ countries }) {
-  console.log("FAMM>>>", countries);
   return (
     <div className="table">
       {countries.map(({ country, cases, countryInfo }) => (
