@@ -77,23 +77,26 @@ function App() {
           </FormControl>
         </div>
 
-        <div className="app__stats">
-          <InfoBox
-            title="Coronavirus Cases"
-            cases={countryInfo.todayCases}
-            total={countryInfo.cases}
-          />
-          <InfoBox
-            title="Recovered"
-            cases={countryInfo.todayRecovered}
-            total={countryInfo.recovered}
-          />
-          <InfoBox
-            title="Deaths"
-            cases={countryInfo.todayDeaths}
-            total={countryInfo.deaths}
-          />
-        </div>
+        {countries?.length > 0 && (
+          <div className="app__stats">
+            <InfoBox
+              title="Coronavirus Cases"
+              cases={countryInfo.todayCases}
+              total={countryInfo.cases}
+            />
+
+            <InfoBox
+              title="Recovered"
+              cases={countryInfo.todayRecovered}
+              total={countryInfo.recovered}
+            />
+            <InfoBox
+              title="Deaths"
+              cases={countryInfo.todayDeaths}
+              total={countryInfo.deaths}
+            />
+          </div>
+        )}
         <Map />
       </div>
       <div className="app__right">
@@ -101,7 +104,7 @@ function App() {
           <CardContent>
             <h3 style={{ color: "red" }}>Live Cases by Country</h3>
             <Table countries={tableData} />
-            <h3>Worldwide new Cases</h3>
+            <h3 style={{ marginTop: "2rem" }}>Worldwide new Cases</h3>
             <LineGraph />
           </CardContent>
         </Card>
