@@ -4,7 +4,10 @@
   box-sizing: border-box;
 }
 body {
-  background: rgb(247, 247, 247);
+  background: rgb(34, 34, 34);
+}
+h1 {
+  color: white;
 }
 .app {
   padding: 20px;
@@ -30,4 +33,11 @@ body {
   .app {
     flex-direction: column;
   }
+}
+
+.select {
+  background-color: white !important;
+  border: 1px solid white !important;
+  display: flex !important;
+  align-items: center !important;
 }

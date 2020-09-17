@@ -43,11 +43,20 @@ export const showdataOnMap = (data, casesType = "cases") =>
         Math.sqrt(country[casesType]) * casesTypeColors[casesType].multiplier
       }
     >
-      <Popup>
-        <div>{country.country}</div>
-        <div>{`Cases: ${numeral(country.cases).format("0,0")}`}</div>
-        <div>{`Recovered: ${numeral(country.recovered).format("0,0")}`}</div>
-        <div>{`Deaths: ${numeral(country.deaths).format("0,0")}`}</div>
+      <Popup className="popup-container">
+        <div className="popup-topline">
+          <img className="popup-flag" src={country.countryInfo.flag} />
+          <div className="popup-country">{country.country}</div>
+        </div>
+        <div className="popup-cases">
+          Cases: <strong>{numeral(country.cases).format("0,0")}</strong>
+        </div>
+        <div className="popup-recovered">
+          Recovered: <strong>{numeral(country.recovered).format("0,0")}</strong>
+        </div>
+        <div className="popup-deaths">
+          Deaths: <strong>{numeral(country.deaths).format("0,0")}</strong>
+        </div>
       </Popup>
     </Circle>
   ));
