@@ -1,0 +1,23 @@
+.infoBox {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 8px 8px 0;
+}
+.infoBox--top {
+  display: flex;
+  align-items: center;
+}
+.icons {
+  font-size: 24px;
+  margin-right: 20px;
+}
+.black {
+  color: #444;
+}
+.red {
+  color: #777;
+}
+.green {
+  color: rgb(82, 179, 82);
+}

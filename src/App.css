@@ -3,16 +3,28 @@
   padding: 0;
   box-sizing: border-box;
 }
+html,
+body {
+  height: 100%;
+}
 body {
   background: rgb(34, 34, 34);
 }
 h1 {
   color: white;
 }
+.frag {
+  /* background: turquoise; */
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 .app {
   padding: 20px;
   display: flex;
   justify-content: space-evenly;
+  flex: 2;
+
   /* flex-wrap: wrap; */
 }
 .app__header {
@@ -23,8 +35,15 @@ h1 {
 }
 .app__stats {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   /* width: 30vw; */
+}
+.app__stats__box h3 {
+  color: white;
+  margin-bottom: 10px;
+}
+.app__stats__box:not(:last-of-type) {
+  margin-right: 20px;
 }
 .app__left {
   flex: 0.9;

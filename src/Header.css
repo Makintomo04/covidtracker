@@ -1,0 +1,15 @@
+header {
+  width: 100%;
+  /* background: red; */
+  /* margin-top: 10px; */
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 50px;
+  align-items: center;
+  font-size: 18px;
+  border-bottom: 2px solid red;
+}
+header h2 {
+  padding: 15px;
+}

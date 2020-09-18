@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import {
   FormControl,
   Select,
@@ -6,6 +6,7 @@ import {
   Card,
   CardContent,
 } from "@material-ui/core";
+import { faShieldVirus } from "@fortawesome/free-solid-svg-icons";
 import "./App.css";
 import InfoBox from "./InfoBox";
 import Map from "./Map";
@@ -13,6 +14,8 @@ import Table from "./Table";
 import { sortData } from "./util";
 import LineGraph from "./LineGraph";
 import "leaflet/dist/leaflet.css";
+import Footer from "./Footer";
+import Header from "./Header";
 function App() {
   const [countries, setCountries] = useState([]);
   const [country, setCountry] = useState("Worldwide");
@@ -70,57 +73,75 @@ function App() {
   console.log("YO>>>", countryInfo);
   console.log("oolflm", country);
   return (
-    <div className="app">
-      <div className="app__left">
-        <div className="app__header">
-          <h1>CORONAVIRUS STATISTICS</h1>
-          <FormControl className="app__dropdown">
-            <Select
-              className="select"
-              variant="filled"
-              onChange={handleChange}
-              value={country}
-            >
-              <MenuItem value="Worldwide">Worldwide</MenuItem>
-              {countries.map((country) => (
-                <MenuItem value={country.value}>{country.name} </MenuItem>
-              ))}
-            </Select>
-          </FormControl>
-        </div>
-
-        {countries?.length > 0 && (
-          <div className="app__stats">
-            <InfoBox
-              title="Coronavirus Cases"
-              cases={countryInfo.todayCases}
-              total={countryInfo.cases}
-            />
-
-            <InfoBox
-              title="Recovered"
-              cases={countryInfo.todayRecovered}
-              total={countryInfo.recovered}
-            />
-            <InfoBox
-              title="Deaths"
-              cases={countryInfo.todayDeaths}
-              total={countryInfo.deaths}
-            />
+    <div className="frag">
+      <Header className="header" />
+      <div className="app">
+        <div className="app__left">
+          <div className="app__header">
+            <h1>STATISTICS</h1>
+            <FormControl className="app__dropdown">
+              <Select
+                className="select"
+                variant="filled"
+                onChange={handleChange}
+                value={country}
+              >
+                <MenuItem value="Worldwide">Worldwide</MenuItem>
+                {countries.map((country) => (
+                  <MenuItem value={country.value}>{country.name} </MenuItem>
+                ))}
+              </Select>
+            </FormControl>
           </div>
-        )}
-        <Map countries={mapCountries} center={mapCenter} zoom={mapZoom} />
+
+          {countries?.length > 0 && (
+            <div className="app__stats">
+              <div className="app__stats__box">
+                <h3>Cases</h3>
+                <InfoBox
+                  icon={<i class="fas fa-ambulance"></i>}
+                  iconColor="black"
+                  title="Coronavirus Cases"
+                  cases={countryInfo.todayCases}
+                  total={countryInfo.cases}
+                />
+              </div>
+              <div className="app__stats__box">
+                <h3>Deaths</h3>
+                <InfoBox
+                  icon={<i class="fas fa-skull-crossbones"></i>}
+                  iconColor="red"
+                  title="Deaths"
+                  cases={countryInfo.todayDeaths}
+                  total={countryInfo.deaths}
+                />
+              </div>
+              <div className="app__stats__box">
+                <h3>Recovered</h3>
+                <InfoBox
+                  icon={<i class="fas fa-hand-holding-medical"></i>}
+                  iconColor="green"
+                  title="Recovered"
+                  cases={countryInfo.todayRecovered}
+                  total={countryInfo.recovered}
+                />
+              </div>
+            </div>
+          )}
+          <Map countries={mapCountries} center={mapCenter} zoom={mapZoom} />
+        </div>
+        <div className="app__right">
+          <Card>
+            <CardContent>
+              <h3 style={{ color: "red" }}>Live Cases by Country</h3>
+              <Table countries={tableData} />
+              <h3 style={{ marginTop: "2rem" }}>Worldwide new Cases</h3>
+              <LineGraph />
+            </CardContent>
+          </Card>
+        </div>
       </div>
-      <div className="app__right">
-        <Card>
-          <CardContent>
-            <h3 style={{ color: "red" }}>Live Cases by Country</h3>
-            <Table countries={tableData} />
-            <h3 style={{ marginTop: "2rem" }}>Worldwide new Cases</h3>
-            <LineGraph />
-          </CardContent>
-        </Card>
-      </div>
+      <Footer />
     </div>
   );
 }

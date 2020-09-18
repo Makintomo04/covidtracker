@@ -1,19 +1,22 @@
 import React from "react";
 import { Card, CardContent, Typography } from "@material-ui/core";
-
-function InfoBox({ title, cases, total }) {
+import "./InfoBox.css";
+function InfoBox({ icon, iconColor, title, cases, total }) {
   return (
     <Card className="infoBox">
       <CardContent>
-        <Typography color="text-secondary" className="infoBox__total">
+        <div className="infoBox--top">
+          <div className={`icons ${iconColor}`}>{icon}</div>
+          {/* <Typography color="text-secondary" className="infoBox__total">
           {title}
-        </Typography>
-        <h2 className="infoBox__cases">
-          {cases > 0 ? cases.toLocaleString() : "Unknown"}
-        </h2>
-        <Typography className="infoBox__total">
-          {total > 0 ? total.toLocaleString() : "Unknown"} Total
-        </Typography>
+        </Typography> */}
+          {/* <h2 className={`infoBox__cases ${iconColor}`}>
+            {cases > 0 ? cases.toLocaleString() : "Unknown"}
+          </h2> */}
+          <Typography className={`infoBox__total ${iconColor}`}>
+            <h2>{total > 0 ? total.toLocaleString() : "Unknown"}</h2>
+          </Typography>
+        </div>
       </CardContent>
     </Card>
   );
