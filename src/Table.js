@@ -1,11 +1,11 @@
 import React from "react";
 import "./Table.css";
 import { CommaFormatted } from "./util";
-function Table({ countries }) {
+function Table({ mapCenterProp, countries }) {
   return (
     <div className="table">
       {countries.map(({ country, cases, countryInfo }) => (
-        <tr>
+        <tr onClick={() => mapCenterProp([countryInfo.lat, countryInfo.long])}>
           <div className="table__country">
             <td>
               <img

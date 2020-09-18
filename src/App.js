@@ -25,6 +25,7 @@ function App() {
   const [mapZoom, setMapZoom] = useState(3);
   const [mapCountries, setMapCountries] = useState([]);
   const [casesType, setCasesType] = useState("cases");
+  const [flagClicked, setFlagClicked] = useState(false);
 
   useEffect(() => {
     const getCountries = async () => {
@@ -72,6 +73,7 @@ function App() {
   };
   console.log("YO>>>", countryInfo);
   console.log("oolflm", country);
+  flagClicked && console.log("flag clicked");
   return (
     <div className="frag">
       <Header className="header" />
@@ -134,7 +136,7 @@ function App() {
           <Card>
             <CardContent>
               <h3 style={{ color: "red" }}>Live Cases by Country</h3>
-              <Table countries={tableData} />
+              <Table mapCenterProp={setMapCenter} countries={tableData} />
               <h3 style={{ marginTop: "2rem" }}>Worldwide new Cases</h3>
               <LineGraph />
             </CardContent>

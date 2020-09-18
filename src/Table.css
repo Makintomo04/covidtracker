@@ -20,6 +20,9 @@ img {
   display: flex;
   align-items: center;
 }
+tr {
+  cursor: pointer;
+}
 td {
   padding: 1rem;
 }
