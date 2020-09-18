@@ -28,6 +28,9 @@ function Table({
               mapCenterProp([countryInfo.lat, countryInfo.long]),
               countryProp(countryInfo.iso2)
             );
+            {
+              console.log("YALAYOLO", countryInfo);
+            }
           }}
         >
           <div className="table__country">

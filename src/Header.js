@@ -14,7 +14,7 @@ function Header() {
   return (
     <header>
       <h2 style={{ flex: "1" }}>{moment().format("dddd, MMMM Do YYYY")}</h2>
-      <h2 style={{ background: "red" }}>COVID-19 TRACKER🦠😷</h2>
+      <h2 style={{ background: "#39FF14" }}>COVID-19 TRACKER 🦠😷</h2>
       <h2 style={{ flex: "1", textAlign: "right" }}>{time}</h2>
     </header>
   );

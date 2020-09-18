@@ -8,7 +8,8 @@ body {
   height: 100%;
 }
 body {
-  background: rgb(34, 34, 34);
+  /* background: rgb(34, 34, 34); */
+  background: #2e3755;
 }
 h1 {
   color: white;
@@ -35,6 +36,7 @@ h1 {
 }
 .app__stats {
   display: flex;
+  flex-wrap: wrap;
   /* justify-content: space-between; */
   /* width: 30vw; */
 }

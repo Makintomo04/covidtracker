@@ -99,7 +99,7 @@ function App() {
           {countries?.length > 0 && (
             <div className="app__stats">
               <div className="app__stats__box">
-                <h3>Cases</h3>
+                <h3 style={{ color: "#65DD9B" }}>Cases</h3>
                 <InfoBox
                   icon={<i class="fas fa-ambulance"></i>}
                   iconColor="black"
@@ -109,7 +109,7 @@ function App() {
                 />
               </div>
               <div className="app__stats__box">
-                <h3>Deaths</h3>
+                <h3 style={{ color: "#F65164" }}>Deaths</h3>
                 <InfoBox
                   icon={<i class="fas fa-skull-crossbones"></i>}
                   iconColor="red"
@@ -119,7 +119,7 @@ function App() {
                 />
               </div>
               <div className="app__stats__box">
-                <h3>Recovered</h3>
+                <h3 style={{ color: "#439AE2" }}>Recovered</h3>
                 <InfoBox
                   icon={<i class="fas fa-hand-holding-medical"></i>}
                   iconColor="green"
@@ -128,14 +128,29 @@ function App() {
                   total={countryInfo.recovered}
                 />
               </div>
+              <div className="app__stats__box">
+                <h3 style={{ color: "#F8F63F" }}>Tests</h3>
+                <InfoBox
+                  icon={<i class="fas fa-vial"></i>}
+                  iconColor="green"
+                  title="tests"
+                  // cases={countryInfo.}
+                  total={countryInfo.tests}
+                />
+              </div>
             </div>
           )}
-          <Map countries={mapCountries} center={mapCenter} zoom={mapZoom} />
+          <Map
+            // style={{ cursor: "pointer" }}
+            countries={mapCountries}
+            center={mapCenter}
+            zoom={mapZoom}
+          />
         </div>
         <div className="app__right">
-          <Card>
+          <Card style={{ background: "#364060", width: "500px" }}>
             <CardContent>
-              <h3 style={{ color: "red" }}>Live Cases by Country</h3>
+              <h3 style={{ color: "#39FF14" }}>Live Cases by Country</h3>
               <Table
                 setCountryInfo={setCountryInfo}
                 setMapZoom={setMapZoom}
@@ -143,7 +158,9 @@ function App() {
                 mapCenterProp={setMapCenter}
                 countries={tableData}
               />
-              <h3 style={{ marginTop: "2rem" }}>Worldwide new Cases</h3>
+              <h3 style={{ marginTop: "2rem", color: "#39FF14" }}>
+                Worldwide new Cases
+              </h3>
               <LineGraph />
             </CardContent>
           </Card>
