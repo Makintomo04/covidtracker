@@ -98,8 +98,11 @@ function App() {
 
           {countries?.length > 0 && (
             <div className="app__stats">
-              <div className="app__stats__box">
-                <h3 style={{ color: "#65DD9B" }}>Cases</h3>
+              <div
+                className="app__stats__box"
+                onClick={() => setCasesType("cases")}
+              >
+                <h3 style={{ color: "#439AE2" }}>Cases</h3>
                 <InfoBox
                   icon={<i class="fas fa-ambulance"></i>}
                   iconColor="black"
@@ -108,7 +111,10 @@ function App() {
                   total={countryInfo.cases}
                 />
               </div>
-              <div className="app__stats__box">
+              <div
+                className="app__stats__box"
+                onClick={() => setCasesType("deaths")}
+              >
                 <h3 style={{ color: "#F65164" }}>Deaths</h3>
                 <InfoBox
                   icon={<i class="fas fa-skull-crossbones"></i>}
@@ -118,8 +124,11 @@ function App() {
                   total={countryInfo.deaths}
                 />
               </div>
-              <div className="app__stats__box">
-                <h3 style={{ color: "#439AE2" }}>Recovered</h3>
+              <div
+                className="app__stats__box"
+                onClick={() => setCasesType("recovered")}
+              >
+                <h3 style={{ color: "#65DD9B" }}>Recovered</h3>
                 <InfoBox
                   icon={<i class="fas fa-hand-holding-medical"></i>}
                   iconColor="green"
@@ -128,7 +137,10 @@ function App() {
                   total={countryInfo.recovered}
                 />
               </div>
-              <div className="app__stats__box">
+              <div
+                className="app__stats__box"
+                onClick={() => setCasesType("tests")}
+              >
                 <h3 style={{ color: "#F8F63F" }}>Tests</h3>
                 <InfoBox
                   icon={<i class="fas fa-vial"></i>}
@@ -143,6 +155,7 @@ function App() {
           <Map
             // style={{ cursor: "pointer" }}
             countries={mapCountries}
+            casesType={casesType}
             center={mapCenter}
             zoom={mapZoom}
           />

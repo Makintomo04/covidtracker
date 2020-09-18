@@ -4,22 +4,28 @@ import numeral from "numeral";
 
 const casesTypeColors = {
   cases: {
-    hex: "#CC1034",
+    hex: "#3D86C7",
     rgb: "rgb(204, 16, 52)",
     half_op: "rgba(204, 16, 52, 0.5)",
     multiplier: 800,
   },
   recovered: {
-    hex: "#7dd71d",
+    hex: "#39FF14",
     rgb: "rgb(125, 215, 29)",
     half_op: "rgba(125, 215, 29, 0.5)",
-    multiplier: 1200,
+    multiplier: 1000,
   },
   deaths: {
-    hex: "#fb4443",
-    rgb: "rgb(251, 68, 67)",
+    hex: "#CC1034",
+    rgb: "rgb(204, 16, 52)",
     half_op: "rgba(251, 68, 67, 0.5)",
     multiplier: 2000,
+  },
+  tests: {
+    hex: "#F8F63F",
+    rgb: "rgb(204, 16, 52)",
+    half_op: "rgba(251, 68, 67, 0.5)",
+    multiplier: 200,
   },
 };
 
