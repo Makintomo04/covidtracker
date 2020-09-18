@@ -51,12 +51,12 @@ function App() {
       .then((response) => response.json())
       .then((data) => {
         setCountryInfo(data);
+        console.log("data", data);
       });
   }, []);
 
   const handleChange = async (event) => {
     const country = event.target.value;
-    console.log(event.target);
     const url =
       country === "worldwide"
         ? `https://disease.sh/v3/covid-19/all`
@@ -70,10 +70,10 @@ function App() {
         setMapCenter([data.countryInfo.lat, data.countryInfo.long]);
         setMapZoom(5);
       });
+    console.log("TheCountry333: ", country);
   };
-  console.log("YO>>>", countryInfo);
-  console.log("oolflm", country);
-  flagClicked && console.log("flag clicked");
+  console.log("TheCountry: ", country);
+
   return (
     <div className="frag">
       <Header className="header" />
@@ -136,7 +136,13 @@ function App() {
           <Card>
             <CardContent>
               <h3 style={{ color: "red" }}>Live Cases by Country</h3>
-              <Table mapCenterProp={setMapCenter} countries={tableData} />
+              <Table
+                setCountryInfo={setCountryInfo}
+                setMapZoom={setMapZoom}
+                countryProp={setCountry}
+                mapCenterProp={setMapCenter}
+                countries={tableData}
+              />
               <h3 style={{ marginTop: "2rem" }}>Worldwide new Cases</h3>
               <LineGraph />
             </CardContent>

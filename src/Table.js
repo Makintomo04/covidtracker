@@ -1,11 +1,35 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Table.css";
 import { CommaFormatted } from "./util";
-function Table({ mapCenterProp, countries }) {
+function Table({
+  setCountryInfo,
+  setMapZoom,
+  countryProp,
+  mapCenterProp,
+  countries,
+}) {
+  const [country, setCountry] = useState([]);
+
   return (
     <div className="table">
       {countries.map(({ country, cases, countryInfo }) => (
-        <tr onClick={() => mapCenterProp([countryInfo.lat, countryInfo.long])}>
+        <tr
+          onClick={() => {
+            return (
+              fetch(
+                `https://disease.sh/v3/covid-19/countries/${countryInfo.iso2}`
+              )
+                .then((response) => response.json())
+                .then((data) => {
+                  setCountryInfo(data);
+                }),
+              setCountry(country),
+              setMapZoom(5),
+              mapCenterProp([countryInfo.lat, countryInfo.long]),
+              countryProp(countryInfo.iso2)
+            );
+          }}
+        >
           <div className="table__country">
             <td>
               <img
@@ -15,6 +39,7 @@ function Table({ mapCenterProp, countries }) {
                 src={countryInfo.flag}
               />
             </td>
+
             <td>{country}</td>
           </div>
           <td>

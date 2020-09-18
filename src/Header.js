@@ -10,7 +10,7 @@ function Header() {
   const updateTime = () => {
     setTime(moment().format("h:mm:ss a"));
   };
-  console.log("FAMMM");
+
   return (
     <header>
       <h2 style={{ flex: "1" }}>{moment().format("dddd, MMMM Do YYYY")}</h2>
