@@ -3,6 +3,7 @@
   display: flex;
   align-items: center;
   padding: 8px 8px 0;
+  width: 230px;
   background: #445175 !important;
 }
 .infoBox--top {
@@ -24,4 +25,7 @@
 }
 h3 {
   font-size: 26px;
+}
+.box--selected {
+  border-bottom: 2px solid rgb(72, 167, 255);
 }

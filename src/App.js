@@ -25,7 +25,7 @@ function App() {
   const [mapZoom, setMapZoom] = useState(3);
   const [mapCountries, setMapCountries] = useState([]);
   const [casesType, setCasesType] = useState("cases");
-  const [flagClicked, setFlagClicked] = useState(false);
+  const [isInfoClicked, setIsInfoClicked] = useState(false);
 
   useEffect(() => {
     const getCountries = async () => {
@@ -58,7 +58,7 @@ function App() {
   const handleChange = async (event) => {
     const country = event.target.value;
     const url =
-      country === "worldwide"
+      country === "Worldwide"
         ? `https://disease.sh/v3/covid-19/all`
         : `https://disease.sh/v3/covid-19/countries/${country}`;
 
@@ -67,8 +67,15 @@ function App() {
       .then((data) => {
         setCountry(country);
         setCountryInfo(data);
-        setMapCenter([data.countryInfo.lat, data.countryInfo.long]);
-        setMapZoom(5);
+        if (country === "Worldwide") {
+          setMapCenter([34.80746, -40.4796]);
+          setMapZoom(3);
+        }
+        if (data.countryInfo) {
+          setMapCenter([data.countryInfo.lat, data.countryInfo.long]);
+          setMapZoom(5);
+          console.log(mapCenter);
+        }
       });
     console.log("TheCountry333: ", country);
   };
@@ -104,6 +111,7 @@ function App() {
               >
                 <h3 style={{ color: "#439AE2" }}>Cases</h3>
                 <InfoBox
+                  // active={isInfoClicked}
                   icon={<i class="fas fa-ambulance"></i>}
                   iconColor="black"
                   title="Coronavirus Cases"
@@ -117,6 +125,7 @@ function App() {
               >
                 <h3 style={{ color: "#F65164" }}>Deaths</h3>
                 <InfoBox
+                  // active={isInfoClicked}
                   icon={<i class="fas fa-skull-crossbones"></i>}
                   iconColor="red"
                   title="Deaths"
@@ -130,6 +139,7 @@ function App() {
               >
                 <h3 style={{ color: "#65DD9B" }}>Recovered</h3>
                 <InfoBox
+                  // active={isInfoClicked}
                   icon={<i class="fas fa-hand-holding-medical"></i>}
                   iconColor="green"
                   title="Recovered"
@@ -143,6 +153,7 @@ function App() {
               >
                 <h3 style={{ color: "#F8F63F" }}>Tests</h3>
                 <InfoBox
+                  // active={isInfoClicked == true}
                   icon={<i class="fas fa-vial"></i>}
                   iconColor="green"
                   title="tests"
