@@ -31,7 +31,7 @@ h1 {
 .app__header {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
   align-items: center;
 }
 .app__stats {

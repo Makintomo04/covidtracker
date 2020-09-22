@@ -6,7 +6,7 @@ import {
   Card,
   CardContent,
 } from "@material-ui/core";
-import { faShieldVirus } from "@fortawesome/free-solid-svg-icons";
+// import { faShieldVirus } from "@fortawesome/free-solid-svg-icons";
 import "./App.css";
 import InfoBox from "./InfoBox";
 import Map from "./Map";
