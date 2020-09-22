@@ -6,4 +6,7 @@ footer {
   justify-content: center;
   align-items: center;
   flex: 1;
+  height: auto;
+  padding-top: 10px;
+  padding-bottom: 30px;
 }
