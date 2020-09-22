@@ -57,11 +57,11 @@ export const showdataOnMap = (data, casesType = "cases") =>
         <div className="popup-cases">
           Cases: <strong>{numeral(country.cases).format("0,0")}</strong>
         </div>
-        <div className="popup-recovered">
-          Recovered: <strong>{numeral(country.recovered).format("0,0")}</strong>
-        </div>
         <div className="popup-deaths">
           Deaths: <strong>{numeral(country.deaths).format("0,0")}</strong>
+        </div>
+        <div className="popup-recovered">
+          Recovered: <strong>{numeral(country.recovered).format("0,0")}</strong>
         </div>
       </Popup>
     </Circle>
