@@ -88,19 +88,18 @@ function App() {
         <div className="app__left">
           <div className="app__header">
             <h1>STATISTICS</h1>
-            <FormControl className="app__dropdown">
-              <Select
+            <form className="app__dropdown">
+              <select
                 className="select"
-                variant="filled"
                 onChange={handleChange}
                 value={country}
               >
-                <MenuItem value="Worldwide">Worldwide</MenuItem>
+                <option value="Worldwide">Worldwide</option>
                 {countries.map((country) => (
-                  <MenuItem value={country.value}>{country.name} </MenuItem>
+                  <option value={country.value}>{country.name} </option>
                 ))}
-              </Select>
-            </FormControl>
+              </select>
+            </form>
           </div>
 
           {countries?.length > 0 && (
@@ -172,9 +171,11 @@ function App() {
           />
         </div>
         <div className="app__right">
-          <Card style={{ background: "#364060", width: "500px" }}>
+          <Card
+            style={{ background: "#364060", width: "500px", height: "auto" }}
+          >
             <CardContent>
-              <h3 style={{ color: "#39FF14" }}>Live Cases by Country</h3>
+              <h3 style={{ color: "#14c0ff" }}>Live Cases by Country</h3>
               <Table
                 setCountryInfo={setCountryInfo}
                 setMapZoom={setMapZoom}
@@ -182,7 +183,7 @@ function App() {
                 mapCenterProp={setMapCenter}
                 countries={tableData}
               />
-              <h3 style={{ marginTop: "2rem", color: "#39FF14" }}>
+              <h3 style={{ marginTop: "2rem", color: "#14c0ff" }}>
                 Worldwide new Cases
               </h3>
               <LineGraph />

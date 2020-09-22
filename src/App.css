@@ -55,10 +55,31 @@ h1 {
     flex-direction: column;
   }
 }
-
+.app__dropdown {
+  color: white;
+  scroll-behavior: smooth;
+  cursor: pointer;
+  width: 100%;
+  margin-left: 50px;
+}
 .select {
-  background-color: white !important;
-  border: 1px solid white !important;
-  display: flex !important;
-  align-items: center !important;
+  background-color: transparent;
+  border: 1px solid #14c0ff;
+  display: flex;
+  align-items: center;
+  padding: 15px 10px;
+  color: #14c0ff;
+  scroll-behavior: smooth;
+  cursor: pointer;
+  width: 100%;
+  outline: none;
+}
+.select option {
+  background: #2e3755;
+  scroll-behavior: smooth;
+  cursor: pointer;
+}
+.select option:hover {
+  background: #445175;
+  cursor: pointer;
 }
