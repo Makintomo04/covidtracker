@@ -55,13 +55,28 @@ export const showdataOnMap = (data, casesType = "cases") =>
           <div className="popup-country">{country.country}</div>
         </div>
         <div className="popup-cases">
-          Cases: <strong>{numeral(country.cases).format("0,0")}</strong>
+          Cases:{" "}
+          <strong>
+            {country.cases > 0
+              ? numeral(country.cases).format("0,0")
+              : "Unknown"}
+          </strong>
         </div>
         <div className="popup-deaths">
-          Deaths: <strong>{numeral(country.deaths).format("0,0")}</strong>
+          Deaths:{" "}
+          <strong>
+            {country.deaths > 0
+              ? numeral(country.deaths).format("0,0")
+              : "Unknown"}
+          </strong>
         </div>
         <div className="popup-recovered">
-          Recovered: <strong>{numeral(country.recovered).format("0,0")}</strong>
+          Recovered:{" "}
+          <strong>
+            {country.recovered > 0
+              ? numeral(country.recovered).format("0,0")
+              : "Unknown"}
+          </strong>
         </div>
       </Popup>
     </Circle>

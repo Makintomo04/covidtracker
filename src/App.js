@@ -85,6 +85,7 @@ function App() {
     <div className="frag">
       <Header className="header" />
       <div className="app">
+        {/* <div className="side"></div> */}
         <div className="app__left">
           <div className="app__header">
             <h1>STATISTICS</h1>
@@ -101,46 +102,50 @@ function App() {
               </select>
             </form>
           </div>
-
           {countries?.length > 0 && (
             <div className="app__stats">
               <div
                 className="app__stats__box"
                 onClick={() => setCasesType("cases")}
               >
-                <h3 style={{ color: "#439AE2" }}>Cases</h3>
+                {/* <h3 style={{ color: "#439AE2" }}>Cases</h3> */}
                 <InfoBox
                   // active={isInfoClicked}
                   icon={<i class="fas fa-ambulance"></i>}
                   iconColor="black"
-                  title="Coronavirus Cases"
+                  title="Cases"
+                  bgCol="#439AE2"
                   cases={countryInfo.todayCases}
                   total={countryInfo.cases}
                 />
               </div>
+
               <div
                 className="app__stats__box"
                 onClick={() => setCasesType("deaths")}
               >
-                <h3 style={{ color: "#F65164" }}>Deaths</h3>
+                {/* <h3 style={{ color: "#F65164" }}>Deaths</h3> */}
                 <InfoBox
                   // active={isInfoClicked}
                   icon={<i class="fas fa-skull-crossbones"></i>}
                   iconColor="red"
                   title="Deaths"
+                  bgCol="#F65164"
                   cases={countryInfo.todayDeaths}
                   total={countryInfo.deaths}
                 />
               </div>
+
               <div
                 className="app__stats__box"
                 onClick={() => setCasesType("recovered")}
               >
-                <h3 style={{ color: "#65DD9B" }}>Recovered</h3>
+                {/* <h3 style={{ color: "#65DD9B" }}>Recovered</h3> */}
                 <InfoBox
                   // active={isInfoClicked}
                   icon={<i class="fas fa-hand-holding-medical"></i>}
                   iconColor="green"
+                  bgCol="#49cc66"
                   title="Recovered"
                   cases={countryInfo.todayRecovered}
                   total={countryInfo.recovered}
@@ -150,17 +155,19 @@ function App() {
                 className="app__stats__box"
                 onClick={() => setCasesType("tests")}
               >
-                <h3 style={{ color: "#F8F63F" }}>Tests</h3>
+                {/* <h3 style={{ color: "#F8F63F" }}>Tests</h3> */}
                 <InfoBox
+                  bgCol="#f8bd3f"
                   // active={isInfoClicked == true}
                   icon={<i class="fas fa-vial"></i>}
                   iconColor="green"
-                  title="tests"
-                  // cases={countryInfo.}
+                  title="Tests"
+                  // cases={countryInfo.todayTests}
                   total={countryInfo.tests}
                 />
               </div>
             </div>
+          )}
           )}
           <Map
             // style={{ cursor: "pointer" }}
