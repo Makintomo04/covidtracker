@@ -102,7 +102,8 @@ function App() {
               </select>
             </form>
           </div>
-          {countries?.length > 0 && (
+
+          {countries?.length > 0 && countryInfo ? (
             <div className="app__stats">
               <div
                 className="app__stats__box"
@@ -167,8 +168,10 @@ function App() {
                 />
               </div>
             </div>
+          ) : (
+            "Loading..."
           )}
-          )}
+
           <Map
             // style={{ cursor: "pointer" }}
             countries={mapCountries}
