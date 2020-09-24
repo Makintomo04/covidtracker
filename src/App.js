@@ -16,6 +16,7 @@ import LineGraph from "./LineGraph";
 import "leaflet/dist/leaflet.css";
 import Footer from "./Footer";
 import Header from "./Header";
+import Spinner from "./images/Spinner.gif";
 function App() {
   const [countries, setCountries] = useState([]);
   const [country, setCountry] = useState("Worldwide");
@@ -169,7 +170,15 @@ function App() {
               </div>
             </div>
           ) : (
-            "Loading..."
+            <div
+              style={{
+                width: "100%",
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
+              <img src={Spinner} />
+            </div>
           )}
 
           <Map
