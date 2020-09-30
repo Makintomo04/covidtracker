@@ -114,7 +114,6 @@ function App() {
                 <InfoBox
                   // active={isInfoClicked}
                   icon={<i class="fas fa-ambulance"></i>}
-                  iconColor="black"
                   title="Cases"
                   bgCol="#439AE2"
                   cases={countryInfo.todayCases}
@@ -130,7 +129,6 @@ function App() {
                 <InfoBox
                   // active={isInfoClicked}
                   icon={<i class="fas fa-skull-crossbones"></i>}
-                  iconColor="red"
                   title="Deaths"
                   bgCol="#F65164"
                   cases={countryInfo.todayDeaths}
@@ -146,7 +144,6 @@ function App() {
                 <InfoBox
                   // active={isInfoClicked}
                   icon={<i class="fas fa-hand-holding-medical"></i>}
-                  iconColor="green"
                   bgCol="#49cc66"
                   title="Recovered"
                   cases={countryInfo.todayRecovered}
@@ -162,7 +159,6 @@ function App() {
                   bgCol="#f8bd3f"
                   // active={isInfoClicked == true}
                   icon={<i class="fas fa-vial"></i>}
-                  iconColor="green"
                   title="Tests"
                   // cases={countryInfo.todayTests}
                   total={countryInfo.tests}
