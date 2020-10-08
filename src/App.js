@@ -70,13 +70,14 @@ function App() {
         setCountryInfo(data);
         if (country === "Worldwide") {
           setMapCenter([34.80746, -40.4796]);
-          setMapZoom(3);
-        }
-        if (data.countryInfo) {
+        } else if (data.countryInfo) {
           setMapCenter([data.countryInfo.lat, data.countryInfo.long]);
-          setMapZoom(5);
+
           console.log(mapCenter);
         }
+        setTimeout(function () {
+          country === "worldwide" ? setMapZoom(3) : setMapZoom(5);
+        }, 200);
       });
     console.log("TheCountry333: ", country);
   };
