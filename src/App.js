@@ -188,7 +188,7 @@ function App() {
         </div>
         <div className="app__right">
           <Card
-            style={{ background: "#364060", width: "500px", height: "auto" }}
+            style={{ background: "#364060", width: "100%", height: "auto" }}
           >
             <CardContent>
               <h3 style={{ color: "#14c0ff" }}>Live Cases by Country</h3>
