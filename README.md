@@ -1,4 +1,12 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Getting started
+You can view a live demo over at https://covid19-tracker-m1ke.web.app/
+
+To get the frontend running locally:
+
+1) Clone this repository<br />
+2) npm install to install all required dependencies<br />
+3) npm start to start the local server (this project uses create-react-app)
+
 
 ## Available Scripts
 
