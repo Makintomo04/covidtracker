@@ -20,6 +20,6 @@ header h2 {
 }
 @media (max-width: 1200px) {
   header {
-    padding: 0 20px;
+    padding: 0 10px;
   }
 }
