@@ -6,6 +6,8 @@
 html,
 body {
   height: 100%;
+  width: 100%;
+  overflow-x: hidden;
 }
 body {
   /* background: rgb(34, 34, 34); */
@@ -33,7 +35,7 @@ h1 {
   display: flex;
   justify-content: space-evenly;
   flex: 2;
-
+  width: 100%;
   /* flex-wrap: wrap; */
 }
 .app__header {
@@ -45,6 +47,7 @@ h1 {
 .app__stats {
   display: flex;
   flex-wrap: wrap;
+  min-height: auto;
   /* justify-content: space-between; */
   /* width: 30vw; */
 }
@@ -57,6 +60,10 @@ h1 {
 }
 .app__left {
   flex: 0.9;
+  min-width: 45vw;
+}
+.app__right {
+  min-width: 35vw;
 }
 .app__right > div {
   background: #364060;
