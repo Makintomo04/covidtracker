@@ -2,7 +2,7 @@ header {
   width: 100%;
   /* background: red; */
   /* margin-top: 10px; */
-  position: relative;
+  position: fixed;
   top: 0;
   color: white;
   display: flex;
@@ -12,6 +12,7 @@ header {
   font-size: 18px;
   background: #14c0ff;
   border-bottom: 2px solid #14c0ff;
+  z-index: 10;
 }
 header h2 {
   padding: 15px;

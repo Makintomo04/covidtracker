@@ -32,10 +32,12 @@ h1 {
 } */
 .app {
   padding: 20px;
+  padding-top: 100px;
   display: flex;
   justify-content: space-evenly;
   flex: 2;
   width: 100%;
+  z-index: 9;
   /* flex-wrap: wrap; */
 }
 .app__header {
@@ -48,6 +50,7 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   min-height: auto;
+  height: auto;
   /* justify-content: space-between; */
   /* width: 30vw; */
 }
@@ -61,9 +64,11 @@ h1 {
 .app__left {
   flex: 0.9;
   min-width: 45vw;
+  min-height: auto;
 }
 .app__right {
   min-width: 35vw;
+  min-height: auto;
 }
 .app__right > div {
   background: #364060;
@@ -76,6 +81,14 @@ h1 {
   }
   .app__right > div {
     width: 100%;
+  }
+  .app__right {
+    max-width: 100%;
+  }
+}
+@media (max-width: 950px) {
+  .app {
+    padding-top: 150px;
   }
 }
 .app__dropdown {
