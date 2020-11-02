@@ -3,6 +3,7 @@ header {
   /* background: red; */
   /* margin-top: 10px; */
   position: fixed;
+  left: 0;
   top: 0;
   color: white;
   display: flex;
